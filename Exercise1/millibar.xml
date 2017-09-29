@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="OSIsoft.AF.xsd" SchemaVersion="2.0" SoftwareVersion="2.9.1.8106" ExportMode="NoUniqueID" PISystem="AFSRV01" Created="2017-09-29T15:37:57.6137783Z" id="7b0faa35-160d-45ff-83a5-8eff4229515a" ParentKey="6ad579c5-b5bb-4ee5-9a63-b6d2264e2f64" ExportedObject="UOMDatabase" ExportedType="UOMDatabase" Identity="UOMDatabase" PIPersist="115 {9895150E-085D-4fcb-A16D-5EF5D2527196} 2\{6ad579c5-b5bb-4ee5-9a63-b6d2264e2f64}\UOMDatabase*AFSRV01\UOMDatabase">
+  <UOMDatabase>
+    <Name>UOMDatabase</Name>
+    <UOM>
+      <Name>millibar</Name>
+      <Abbreviation>mbar</Abbreviation>
+      <RefFactor>0.001</RefFactor>
+      <RefUOM>bar</RefUOM>
+      <Class>Pressure</Class>
+    </UOM>
+  </UOMDatabase>
+</AF>

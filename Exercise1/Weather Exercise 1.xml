@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="OSIsoft.AF.xsd" SchemaVersion="2.0" SoftwareVersion="2.9.1.8106" ExportMode="NoUniqueID" PISystem="AFSRV01" Database="Weather Exercise 1" Description="" Created="2017-09-29T16:01:06.1591265Z" id="2ba28501-9faf-4216-832b-cdc79d56037b" ParentKey="6ad579c5-b5bb-4ee5-9a63-b6d2264e2f64" ExportedObject="Weather Exercise 1" ExportedType="AFDatabase" Identity="Database" PIPersist="149 {9895150E-085D-4fcb-A16D-5EF5D2527196} 2\{6ad579c5-b5bb-4ee5-9a63-b6d2264e2f64}\{2ba28501-9faf-4216-832b-cdc79d56037b}*AFSRV01\Weather Exercise 1">
+  <AFDatabase>
+    <Name>Weather Exercise 1</Name>
+    <AFElementTemplate>
+      <Name>City template</Name>
+      <Type>None</Type>
+      <InstanceType>Element</InstanceType>
+      <AllowElementToExtend>false</AllowElementToExtend>
+      <AFAttributeTemplate>
+        <Name>Cloud Cover</Name>
+        <DefaultUOM>%</DefaultUOM>
+        <Type>Single</Type>
+        <Value type="Single">0</Value>
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttributeTemplate>
+      <AFAttributeTemplate>
+        <Name>Humidity</Name>
+        <DefaultUOM>%</DefaultUOM>
+        <Type>Single</Type>
+        <Value type="Single">0</Value>
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttributeTemplate>
+      <AFAttributeTemplate>
+        <Name>Pressure</Name>
+        <DefaultUOM>mbar</DefaultUOM>
+        <Type>Single</Type>
+        <Value type="Single">0</Value>
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttributeTemplate>
+      <AFAttributeTemplate>
+        <Name>Temperature</Name>
+        <DefaultUOM>°C</DefaultUOM>
+        <Type>Single</Type>
+        <Value type="Single">0</Value>
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttributeTemplate>
+      <AFAttributeTemplate>
+        <Name>Visibility</Name>
+        <DefaultUOM>km</DefaultUOM>
+        <Type>Single</Type>
+        <Value type="Single">0</Value>
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttributeTemplate>
+      <AFAttributeTemplate>
+        <Name>Wind Speed</Name>
+        <DefaultUOM>m/s</DefaultUOM>
+        <Type>Single</Type>
+        <Value type="Single">0</Value>
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttributeTemplate>
+    </AFElementTemplate>
+    <AFElement>
+      <Name>Chicago</Name>
+      <Template>City template</Template>
+      <AFAttribute>
+        <Name>Cloud Cover</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Humidity</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Pressure</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Temperature</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Visibility</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Wind Speed</Name>
+      </AFAttribute>
+    </AFElement>
+    <AFElement>
+      <Name>Los Angeles</Name>
+      <Template>City template</Template>
+      <AFAttribute>
+        <Name>Cloud Cover</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Humidity</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Pressure</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Temperature</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Visibility</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Wind Speed</Name>
+      </AFAttribute>
+    </AFElement>
+    <AFElement>
+      <Name>New York</Name>
+      <Template>City template</Template>
+      <AFAttribute>
+        <Name>Cloud Cover</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Humidity</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Pressure</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Temperature</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Visibility</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Wind Speed</Name>
+      </AFAttribute>
+    </AFElement>
+    <AFElement>
+      <Name>San Francisco</Name>
+      <Template>City template</Template>
+      <AFAttribute>
+        <Name>Cloud Cover</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Humidity</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Pressure</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Temperature</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Visibility</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Wind Speed</Name>
+      </AFAttribute>
+    </AFElement>
+    <AFElement>
+      <Name>Washington</Name>
+      <Template>City template</Template>
+      <AFAttribute>
+        <Name>Cloud Cover</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Humidity</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Pressure</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Temperature</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Visibility</Name>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Wind Speed</Name>
+      </AFAttribute>
+    </AFElement>
+  </AFDatabase>
+</AF>
