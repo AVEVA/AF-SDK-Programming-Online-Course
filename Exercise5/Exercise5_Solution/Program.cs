@@ -65,7 +65,8 @@ namespace Exercise5_Solution
             // When we fetch the input tag, e.g. "New York_Temperature", we want to also fetch its point attributes.
             // Since all known inputs are "classic", we will work with that.
             // But we don't need the Tag (Name) since we must use brand new names to create the output tags.
-            var classicAttrs = GetClassicAttributes(dataArchive).Except(ExcludedPointAttributes);
+            var classicAttrs = GetPointAttributes(dataArchive, "classic").Except(ExcludedPointAttributes).ToArray();
+
 
             // Simultaneously find tags and load the point attributes.
             // Note the points we want to find are those input tags where we do not have an existing output tag.
@@ -77,7 +78,7 @@ namespace Exercise5_Solution
             var definitions = new Dictionary<string, IDictionary<string, object>>();
             foreach (var tag in inputTags)
             {
-                definitions[$"{prefix}{tag.Name}"] = tag.GetAttributes(classicAttrs.ToArray());
+                definitions[$"{prefix}{tag.Name}"] = tag.GetAttributes(classicAttrs);
             }
 
             // Make a bulk call to create all missing tags in one call.
@@ -103,48 +104,48 @@ namespace Exercise5_Solution
         // in the PIPointsForPIAFSDKWorkshop spreadsheet.  This is fairly rigid and dependent upon 
         // the spreadsheet.
         private static string[] GetExplicitPointAttributes => new string[] { PICommonPointAttributes.Archiving
-                                                                           , PICommonPointAttributes.CompressionDeviation
-                                                                           , PICommonPointAttributes.CompressionPercentage
-                                                                           , PICommonPointAttributes.CompressionMaximum
-                                                                           , PICommonPointAttributes.CompressionMinimum
-                                                                           , PICommonPointAttributes.ConversionFactor
-                                                                           , PICommonPointAttributes.Descriptor
-                                                                           , PICommonPointAttributes.ExceptionDeviation
-                                                                           , PICommonPointAttributes.ExceptionPercentage
-                                                                           , PICommonPointAttributes.ExceptionMaximum
-                                                                           , PICommonPointAttributes.ExceptionMinimum
-                                                                           , PICommonPointAttributes.ExtendedDescriptor
-                                                                           , PICommonPointAttributes.FilterCode
-                                                                           , PICommonPointAttributes.Location1
-                                                                           , PICommonPointAttributes.Location2
-                                                                           , PICommonPointAttributes.Location3
-                                                                           , PICommonPointAttributes.Location4
-                                                                           , PICommonPointAttributes.Location5
-                                                                           , PICommonPointAttributes.PointSource
-                                                                           , PICommonPointAttributes.PointType
-                                                                           , PICommonPointAttributes.PointClassName
-                                                                           , PICommonPointAttributes.Shutdown
-                                                                           , PICommonPointAttributes.SquareRoot
-                                                                           , PICommonPointAttributes.SourcePointID
-                                                                           , PICommonPointAttributes.Step
-                                                                           , PICommonPointAttributes.TotalCode
-                                                                           , PICommonPointAttributes.TypicalValue
-                                                                           , PICommonPointAttributes.UserInt1
-                                                                           , PICommonPointAttributes.UserInt2
-                                                                           , PICommonPointAttributes.UserReal1
-                                                                           , PICommonPointAttributes.UserReal2
-                                                                           , PICommonPointAttributes.Zero
-                                                                           , PICommonPointAttributes.Span
-                                                                           };
+                                                                            , PICommonPointAttributes.CompressionDeviation
+                                                                            , PICommonPointAttributes.CompressionPercentage
+                                                                            , PICommonPointAttributes.CompressionMaximum
+                                                                            , PICommonPointAttributes.CompressionMinimum
+                                                                            , PICommonPointAttributes.ConversionFactor
+                                                                            , PICommonPointAttributes.Descriptor
+                                                                            , PICommonPointAttributes.ExceptionDeviation
+                                                                            , PICommonPointAttributes.ExceptionPercentage
+                                                                            , PICommonPointAttributes.ExceptionMaximum
+                                                                            , PICommonPointAttributes.ExceptionMinimum
+                                                                            , PICommonPointAttributes.ExtendedDescriptor
+                                                                            , PICommonPointAttributes.FilterCode
+                                                                            , PICommonPointAttributes.Location1
+                                                                            , PICommonPointAttributes.Location2
+                                                                            , PICommonPointAttributes.Location3
+                                                                            , PICommonPointAttributes.Location4
+                                                                            , PICommonPointAttributes.Location5
+                                                                            , PICommonPointAttributes.PointSource
+                                                                            , PICommonPointAttributes.PointType
+                                                                            , PICommonPointAttributes.PointClassName
+                                                                            , PICommonPointAttributes.Shutdown
+                                                                            , PICommonPointAttributes.SquareRoot
+                                                                            , PICommonPointAttributes.SourcePointID
+                                                                            , PICommonPointAttributes.Step
+                                                                            , PICommonPointAttributes.TotalCode
+                                                                            , PICommonPointAttributes.TypicalValue
+                                                                            , PICommonPointAttributes.UserInt1
+                                                                            , PICommonPointAttributes.UserInt2
+                                                                            , PICommonPointAttributes.UserReal1
+                                                                            , PICommonPointAttributes.UserReal2
+                                                                            , PICommonPointAttributes.Zero
+                                                                            , PICommonPointAttributes.Span
+                                                                            };
 
         // Another way to list the point attributes is to query all attributes for the "classic" point class.
         // This will return some that you don't want to copy with new tags, such as the Tag name, point ID,
         // create date, etc.  Therefore you will need another method that lists the point attributes to exclude.
-        private static HashSet<string> GetClassicAttributes(PIServer dataArchive)
+        private static IList<string> GetPointAttributes(PIServer dataArchive, string ptClassName)
         {
-            var ptclass = dataArchive.PointClasses["classic"];
+            var ptclass = dataArchive.PointClasses[ptClassName];
             var dict = ptclass.GetAttributes();
-            return new HashSet<string>(dict.Keys);
+            return dict.Keys.ToList();
         }
 
         // These point attributes are not to be copied when creating a new point.
