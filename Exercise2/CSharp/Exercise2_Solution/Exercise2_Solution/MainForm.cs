@@ -89,6 +89,9 @@ namespace Exercise2_Solution
             //To have text align correctly in listbox, we will use a Fixed Width font
             lboxDataValues.Font = new Font("Consolas", 9, FontStyle.Regular);
 
+            FillIntervalPicks();
+            cboxInterval.Enabled = false;
+
             rbTemperature.Checked = true;
             Selected.FeatureText = rbTemperature.Text;
             FillUomPicks(Feature.Temperature);
@@ -159,6 +162,7 @@ namespace Exercise2_Solution
 
             // Continue for the checked radio button
             Selected.DataMethod = (DataMethod)GetByText(typeof(DataMethod), radioButton.Text);
+            cboxInterval.Enabled = (Selected.DataMethod == DataMethod.InterpolatedValues);
             CheckAllButtons();
         }
 
@@ -253,7 +257,8 @@ namespace Exercise2_Solution
 
                 if (Selected.DataMethod == DataMethod.InterpolatedValues)
                 {
-                    values = data.InterpolatedValues(Selected.TimeRange.Value, new AFTimeSpan(TimeSpan.FromHours(1)), Selected.EngUnit, null, false);
+                    var interval = (TimeSpan)cboxInterval.SelectedItem;
+                    values = data.InterpolatedValues(Selected.TimeRange.Value, new AFTimeSpan(interval), Selected.EngUnit, null, false);
                 }
                 else
                 {
@@ -263,7 +268,7 @@ namespace Exercise2_Solution
                 foreach (var value in values)
                 {
                     var uomAbbr = (value.UOM != null) ? $" {value.UOM.Abbreviation}" : "";
-                    lboxDataValues.Items.Add($"{value.Timestamp.LocalTime}\t{value.Value}{uomAbbr}");
+                    lboxDataValues.Items.Add($"{value.Timestamp.LocalTime}\t{value.Value:N1}{uomAbbr}");
                 }
             }
 
@@ -303,6 +308,24 @@ namespace Exercise2_Solution
                 return;
             var feature = (Feature)GetByText(typeof(Feature), Selected.FeatureText);
             FillUomPicks(feature);
+        }
+
+        private void btnViewElement_Click(object sender, EventArgs e)
+        {
+            var dialogForm = new AttributesForm(Selected.Element);
+            dialogForm.ShowDialog(this);
+        }
+
+        private void FillIntervalPicks()
+        {
+            cboxInterval.Items.Clear();
+            cboxInterval.Items.Add(TimeSpan.FromMinutes(5));
+            cboxInterval.Items.Add(TimeSpan.FromMinutes(15));
+            cboxInterval.Items.Add(TimeSpan.FromHours(1));
+            cboxInterval.SelectedIndex = 2;
+            cboxInterval.Items.Add(TimeSpan.FromHours(8));
+            cboxInterval.Items.Add(TimeSpan.FromDays(1));
+            cboxInterval.Items.Add(TimeSpan.FromDays(7));
         }
     }
 }

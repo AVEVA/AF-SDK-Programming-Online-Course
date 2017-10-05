@@ -56,6 +56,8 @@
             this.rbCloudCover = new System.Windows.Forms.RadioButton();
             this.rbTemperature = new System.Windows.Forms.RadioButton();
             this.lblMetaInfo = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboxInterval = new System.Windows.Forms.ComboBox();
             this.gboxData.SuspendLayout();
             this.gboxWeather.SuspendLayout();
             this.SuspendLayout();
@@ -174,11 +176,13 @@
             // 
             // gboxData
             // 
+            this.gboxData.Controls.Add(this.cboxInterval);
             this.gboxData.Controls.Add(this.rbSummary);
             this.gboxData.Controls.Add(this.rbInterpolatedValues);
             this.gboxData.Controls.Add(this.rbRecordedValues);
             this.gboxData.Controls.Add(this.tbEndTime);
             this.gboxData.Controls.Add(this.tbStartTime);
+            this.gboxData.Controls.Add(this.label3);
             this.gboxData.Controls.Add(this.label7);
             this.gboxData.Controls.Add(this.label6);
             this.gboxData.Controls.Add(this.label8);
@@ -226,7 +230,7 @@
             // 
             // tbEndTime
             // 
-            this.tbEndTime.Location = new System.Drawing.Point(89, 66);
+            this.tbEndTime.Location = new System.Drawing.Point(89, 55);
             this.tbEndTime.Name = "tbEndTime";
             this.tbEndTime.Size = new System.Drawing.Size(180, 20);
             this.tbEndTime.TabIndex = 5;
@@ -235,7 +239,7 @@
             // 
             // tbStartTime
             // 
-            this.tbStartTime.Location = new System.Drawing.Point(89, 35);
+            this.tbStartTime.Location = new System.Drawing.Point(89, 24);
             this.tbStartTime.Name = "tbStartTime";
             this.tbStartTime.Size = new System.Drawing.Size(180, 20);
             this.tbStartTime.TabIndex = 5;
@@ -245,16 +249,16 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 69);
+            this.label7.Location = new System.Drawing.Point(28, 85);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 4;
-            this.label7.Text = "End Time";
+            this.label7.Text = "Interval";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 38);
+            this.label6.Location = new System.Drawing.Point(28, 27);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 4;
@@ -278,6 +282,7 @@
             this.btnViewElement.TabIndex = 6;
             this.btnViewElement.Text = "View Element Settings";
             this.btnViewElement.UseVisualStyleBackColor = true;
+            this.btnViewElement.Click += new System.EventHandler(this.btnViewElement_Click);
             // 
             // lboxDataValues
             // 
@@ -405,6 +410,24 @@
             this.lblMetaInfo.TabIndex = 4;
             this.lblMetaInfo.Text = "Data Values";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(28, 60);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "End Time";
+            // 
+            // cboxInterval
+            // 
+            this.cboxInterval.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxInterval.FormattingEnabled = true;
+            this.cboxInterval.Location = new System.Drawing.Point(89, 84);
+            this.cboxInterval.Name = "cboxInterval";
+            this.cboxInterval.Size = new System.Drawing.Size(179, 21);
+            this.cboxInterval.TabIndex = 7;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,6 +486,8 @@
         private System.Windows.Forms.RadioButton rbCloudCover;
         private System.Windows.Forms.RadioButton rbTemperature;
         private System.Windows.Forms.Label lblMetaInfo;
+        private System.Windows.Forms.ComboBox cboxInterval;
+        private System.Windows.Forms.Label label3;
     }
 }
 
