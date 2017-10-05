@@ -268,7 +268,7 @@ namespace Exercise2_Solution
                 foreach (var value in values)
                 {
                     var uomAbbr = (value.UOM != null) ? $" {value.UOM.Abbreviation}" : "";
-                    lboxDataValues.Items.Add($"{value.Timestamp.LocalTime}\t{value.Value:N1}{uomAbbr}");
+                    lboxDataValues.Items.Add($"{value.Timestamp.LocalTime}\t{value.Value:N3}{uomAbbr}");
                 }
             }
 
