@@ -77,14 +77,28 @@ namespace Exercise2_Solution
             public bool IsEmpty => Equals(new MetaData());
 
             public MetaData Clone => new MetaData(this);
+
+            public override string ToString()
+            {
+                // Let's be nice and show some context regarding the data values that were retrieved
+                var sb = new StringBuilder();
+                sb.Append(Attribute);
+                if (EngUnit != null)
+                    sb.Append($"; UOM={EngUnit.Abbreviation}");
+                sb.Append($"; {DataMethod}");
+                sb.Append($"; {TimeRange.Value}");
+                return sb.ToString();
+            }
         }
 
         private MetaData Selected = new MetaData();
-        private MetaData Retrieved = new MetaData();
+        private const string InitialMetaDataText = "Data Values";
 
         public MainForm()
         {
             InitializeComponent();
+
+            lblMetaInfo.Text = InitialMetaDataText;
 
             //To have text align correctly in listbox, we will use a Fixed Width font
             lboxDataValues.Font = new Font("Consolas", 9, FontStyle.Regular);
@@ -232,7 +246,7 @@ namespace Exercise2_Solution
             btnViewElement.Enabled = (Selected.Attribute != null);
             btnGetData.Enabled = Selected.IsValid;
 
-            lblMetaInfo.ForeColor = (Selected.Equals(Retrieved) || Retrieved.IsEmpty) ? Color.Black : Color.Red;
+            lblMetaInfo.ForeColor = (lblMetaInfo.Text == InitialMetaDataText || lblMetaInfo.Text == Selected.ToString()) ? Color.Black : Color.Red;
         }
 
         private void btnGetData_Click(object sender, EventArgs e)
@@ -272,16 +286,7 @@ namespace Exercise2_Solution
                 }
             }
 
-            // Let's be nice and show some context regarding the data values that were retrieved
-            var sb = new StringBuilder();
-            sb.Append(Selected.Attribute);
-            if (Selected.EngUnit != null)
-                sb.Append($"; UOM={Selected.EngUnit.Abbreviation}");
-            sb.Append($"; {Selected.DataMethod}");
-            sb.Append($"; {Selected.TimeRange.Value}");
-            lblMetaInfo.Text = sb.ToString();
-
-            Retrieved = Selected.Clone;
+            lblMetaInfo.Text = Selected.ToString();
             CheckAllButtons();
         }
 
