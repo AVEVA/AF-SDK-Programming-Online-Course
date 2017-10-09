@@ -1,0 +1,1046 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="OSIsoft.AF.xsd" SchemaVersion="2.0" SoftwareVersion="2.9.1.8106" ExportMode="NoUniqueID, DefaultValues" PISystem="AFSRV01" Database="Weather Exercise 3" Description="" Created="2017-10-06T18:39:35.8282684Z" id="2ba28501-9faf-4216-832b-cdc79d56037b" ParentKey="6ad579c5-b5bb-4ee5-9a63-b6d2264e2f64" ExportedObject="Weather Exercise 3" ExportedType="AFDatabase" Identity="Database" PIPersist="149 {9895150E-085D-4fcb-A16D-5EF5D2527196} 2\{6ad579c5-b5bb-4ee5-9a63-b6d2264e2f64}\{2ba28501-9faf-4216-832b-cdc79d56037b}*AFSRV01\Weather Exercise 3">
+  <AFDatabase>
+    <Name>Weather Exercise 3</Name>
+    <Description />
+    <AFReferenceType>
+      <Name>Composition</Name>
+      <ChildName>IsComposedOf</ChildName>
+      <ParentName>ComposedBy</ParentName>
+      <Strength>Composition</Strength>
+      <AllowedParentElementTemplate />
+      <AllowedChildElementTemplate />
+    </AFReferenceType>
+    <AFReferenceType>
+      <Name>Parent-Child</Name>
+      <ChildName>Child</ChildName>
+      <ParentName>Parent</ParentName>
+      <Strength>Strong</Strength>
+      <AllowedParentElementTemplate />
+      <AllowedChildElementTemplate />
+    </AFReferenceType>
+    <AFReferenceType>
+      <Name>Weak Reference</Name>
+      <ChildName>Referenced</ChildName>
+      <ParentName>Referenced by</ParentName>
+      <Strength>Weak</Strength>
+      <AllowedParentElementTemplate />
+      <AllowedChildElementTemplate />
+    </AFReferenceType>
+    <AFElementTemplate>
+      <Name>City template</Name>
+      <Description />
+      <BaseTemplate />
+      <Type>None</Type>
+      <InstanceType>Element</InstanceType>
+      <AllowElementToExtend>false</AllowElementToExtend>
+      <DefaultAttribute />
+      <NamingPattern />
+      <DefaultInputPort />
+      <DefaultOutputPort />
+      <DefaultUndirectedPort />
+      <AFAttributeTemplate>
+        <Name>Cloud Cover</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <IsIndexed>false</IsIndexed>
+        <Trait />
+        <DefaultUOM>%</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <Value type="Single">0</Value>
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttributeTemplate>
+      <AFAttributeTemplate>
+        <Name>Humidity</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <IsIndexed>false</IsIndexed>
+        <Trait />
+        <DefaultUOM>%</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <Value type="Single">0</Value>
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttributeTemplate>
+      <AFAttributeTemplate>
+        <Name>Pressure</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <IsIndexed>false</IsIndexed>
+        <Trait />
+        <DefaultUOM>mbar</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <Value type="Single">0</Value>
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttributeTemplate>
+      <AFAttributeTemplate>
+        <Name>Temperature</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <IsIndexed>false</IsIndexed>
+        <Trait />
+        <DefaultUOM>°C</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <Value type="Single">0</Value>
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+        <AFAttributeTemplate>
+          <Name>Hot</Name>
+          <Description />
+          <IsHidden>false</IsHidden>
+          <IsManualDataEntry>false</IsManualDataEntry>
+          <IsConfigurationItem>false</IsConfigurationItem>
+          <IsExcluded>false</IsExcluded>
+          <IsIndexed>false</IsIndexed>
+          <Trait>Hi</Trait>
+          <DefaultUOM>°C</DefaultUOM>
+          <Type>Single</Type>
+          <TypeQualifier />
+          <Value type="Single">29</Value>
+          <DataReference />
+          <ConfigString />
+        </AFAttributeTemplate>
+        <AFAttributeTemplate>
+          <Name>Very Hot</Name>
+          <Description />
+          <IsHidden>false</IsHidden>
+          <IsManualDataEntry>false</IsManualDataEntry>
+          <IsConfigurationItem>false</IsConfigurationItem>
+          <IsExcluded>false</IsExcluded>
+          <IsIndexed>false</IsIndexed>
+          <Trait>HiHi</Trait>
+          <DefaultUOM>°C</DefaultUOM>
+          <Type>Single</Type>
+          <TypeQualifier />
+          <Value type="Single">39</Value>
+          <DataReference />
+          <ConfigString />
+        </AFAttributeTemplate>
+      </AFAttributeTemplate>
+      <AFAttributeTemplate>
+        <Name>Visibility</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <IsIndexed>false</IsIndexed>
+        <Trait />
+        <DefaultUOM>km</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <Value type="Single">0</Value>
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttributeTemplate>
+      <AFAttributeTemplate>
+        <Name>Wind Speed</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <IsIndexed>false</IsIndexed>
+        <Trait />
+        <DefaultUOM>m/s</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <Value type="Single">0</Value>
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttributeTemplate>
+      <AFAnalysisTemplate>
+        <Name>Hot City Analysis Template</Name>
+        <Description />
+        <OutputTime />
+        <GroupID>0</GroupID>
+        <CaseTemplate />
+        <Target>City template</Target>
+        <CreateEnabled>true</CreateEnabled>
+        <AFAnalysisRule>
+          <AFPlugIn>EventFrame</AFPlugIn>
+          <ConfigString>EFTGUID=466836b0-bf53-499f-958f-c49ad5f89283;EFTNAME=Hot Weather Warning;SAVETRIGGERNAME=True</ConfigString>
+          <VariableMapping />
+          <AFAnalysisRule>
+            <AFPlugIn>PerformanceEquation</AFPlugIn>
+            <ConfigString>@group("Variables")&#xD;
+IsVeryHot := '{7720ca33-e5a1-4469-91e3-e2dc03daf101};Temperature' &gt;= '{7720ca33-e5a1-4469-91e3-e2dc03daf101};Temperature|{5f2c5a67-31ec-485e-a11b-d419e607a620};Very Hot';&#xD;
+&#xD;
+@group("Variables")&#xD;
+IsHot := ('{7720ca33-e5a1-4469-91e3-e2dc03daf101};Temperature' &gt;= '{7720ca33-e5a1-4469-91e3-e2dc03daf101};Temperature|{2a70ae46-5733-45f4-a7b5-7ecd8b24e240};Hot') And Not IsVeryHot;&#xD;
+&#xD;
+@group("Start triggers") @name("Very+Hot") @severity("Major")&#xD;
+StartTrigger1 := IsVeryHot;&#xD;
+&#xD;
+@group("Start triggers") @name("Hot") @severity("Warning")&#xD;
+StartTrigger2 := IsHot;</ConfigString>
+            <VariableMapping />
+          </AFAnalysisRule>
+        </AFAnalysisRule>
+        <AFTimeRule>
+          <AFPlugIn>Natural</AFPlugIn>
+          <ConfigString />
+        </AFTimeRule>
+      </AFAnalysisTemplate>
+      <AFNotificationRuleTemplate>
+        <Name>City High Temperature Alert</Name>
+        <Description />
+        <CreateEnabled>true</CreateEnabled>
+        <MultiTriggerEventOption>HighestSeverity</MultiTriggerEventOption>
+        <ResendInterval>0</ResendInterval>
+        <NonrepetitionInterval>0</NonrepetitionInterval>
+        <Criteria>AnalysisName:"Hot City Analysis Template"</Criteria>
+        <Target>City template</Target>
+        <ContentExample />
+      </AFNotificationRuleTemplate>
+    </AFElementTemplate>
+    <AFElementTemplate>
+      <Name>Hot Weather Warning</Name>
+      <Description />
+      <BaseTemplate />
+      <Type>None</Type>
+      <InstanceType>EventFrame</InstanceType>
+      <AllowElementToExtend>false</AllowElementToExtend>
+      <DefaultAttribute>Start Trigger Name</DefaultAttribute>
+      <NamingPattern>%ELEMENT% %TEMPLATE% %STARTTIME:yyyy-MM-dd HH:mm:ss.fff%</NamingPattern>
+      <DefaultInputPort />
+      <DefaultOutputPort />
+      <DefaultUndirectedPort />
+      <Severity>0</Severity>
+      <CanBeAcknowledged>false</CanBeAcknowledged>
+      <AFAttributeTemplate>
+        <Name>Start Trigger Name</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>true</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <IsIndexed>false</IsIndexed>
+        <Trait>StartTriggerName</Trait>
+        <DefaultUOM />
+        <Type>String</Type>
+        <TypeQualifier />
+        <Value type="String"></Value>
+        <DataReference />
+        <ConfigString />
+      </AFAttributeTemplate>
+      <AFAttributeTemplate>
+        <Name>Starting Temperature</Name>
+        <Description>.\Elements[.]|Temperature;TimeRangeMethod=StartTime</Description>
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <IsIndexed>false</IsIndexed>
+        <Trait />
+        <DefaultUOM>°C</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <Value type="Single">0</Value>
+        <DataReference>PI Point</DataReference>
+        <ConfigString>.\Elements[.]|Temperature;TimeRangeMethod=StartTime</ConfigString>
+        <AFAttributeTemplate>
+          <Name>Hot</Name>
+          <Description />
+          <IsHidden>false</IsHidden>
+          <IsManualDataEntry>false</IsManualDataEntry>
+          <IsConfigurationItem>false</IsConfigurationItem>
+          <IsExcluded>false</IsExcluded>
+          <IsIndexed>false</IsIndexed>
+          <Trait>Hi</Trait>
+          <DefaultUOM>°C</DefaultUOM>
+          <Type>Single</Type>
+          <TypeQualifier />
+          <Value type="Single">30</Value>
+          <DataReference>String Builder</DataReference>
+          <ConfigString>'.\Elements[.]|Temperature|%Attribute%'&#xD;
+</ConfigString>
+        </AFAttributeTemplate>
+        <AFAttributeTemplate>
+          <Name>Very Hot</Name>
+          <Description />
+          <IsHidden>false</IsHidden>
+          <IsManualDataEntry>false</IsManualDataEntry>
+          <IsConfigurationItem>false</IsConfigurationItem>
+          <IsExcluded>false</IsExcluded>
+          <IsIndexed>false</IsIndexed>
+          <Trait>HiHi</Trait>
+          <DefaultUOM>°C</DefaultUOM>
+          <Type>Single</Type>
+          <TypeQualifier />
+          <Value type="Single">36</Value>
+          <DataReference>String Builder</DataReference>
+          <ConfigString>'.\Elements[.]|Temperature|%Attribute%'</ConfigString>
+        </AFAttributeTemplate>
+      </AFAttributeTemplate>
+    </AFElementTemplate>
+    <AFElement>
+      <Name>Chicago</Name>
+      <Description />
+      <Template>City template</Template>
+      <IsAnnotated>false</IsAnnotated>
+      <Modifier>OSI\rdavin</Modifier>
+      <Comment />
+      <EffectiveDate>1970-01-01T00:00:00Z</EffectiveDate>
+      <ObsoleteDate>9999-12-31T23:59:59Z</ObsoleteDate>
+      <AFAttribute>
+        <Name>Cloud Cover</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>%</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Humidity</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>%</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Pressure</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>mbar</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Temperature</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>°C</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+        <AFAttribute>
+          <Name>Hot</Name>
+          <Description />
+          <IsHidden>false</IsHidden>
+          <IsManualDataEntry>false</IsManualDataEntry>
+          <IsConfigurationItem>false</IsConfigurationItem>
+          <IsExcluded>false</IsExcluded>
+          <Trait>Hi</Trait>
+          <DefaultUOM>°C</DefaultUOM>
+          <Type>Single</Type>
+          <TypeQualifier />
+          <Value default="true" type="Single">29</Value>
+          <DataReference />
+          <ConfigString />
+        </AFAttribute>
+        <AFAttribute>
+          <Name>Very Hot</Name>
+          <Description />
+          <IsHidden>false</IsHidden>
+          <IsManualDataEntry>false</IsManualDataEntry>
+          <IsConfigurationItem>false</IsConfigurationItem>
+          <IsExcluded>false</IsExcluded>
+          <Trait>HiHi</Trait>
+          <DefaultUOM>°C</DefaultUOM>
+          <Type>Single</Type>
+          <TypeQualifier />
+          <Value default="true" type="Single">39</Value>
+          <DataReference />
+          <ConfigString />
+        </AFAttribute>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Visibility</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>km</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Wind Speed</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>m/s</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAnalysis>
+        <Name>Hot City Analysis Template</Name>
+        <Description />
+        <Template>Hot City Analysis Template</Template>
+        <CaseTemplate />
+        <OutputTime />
+        <Status>Enabled</Status>
+        <PublishResults>false</PublishResults>
+        <Priority>High</Priority>
+        <MaxQueueSize>0</MaxQueueSize>
+        <GroupID>0</GroupID>
+        <Target>
+          <AFElementRef>Chicago</AFElementRef>
+        </Target>
+      </AFAnalysis>
+      <AFNotificationRule>
+        <Name>City High Temperature Alert</Name>
+        <Description />
+        <Status>Enabled</Status>
+        <MultiTriggerEventOption>HighestSeverity</MultiTriggerEventOption>
+        <ResendInterval>0</ResendInterval>
+        <NonrepetitionInterval>0</NonrepetitionInterval>
+        <Criteria>AnalysisName:"Hot City Analysis Template"</Criteria>
+        <Template>ElementTemplates[City template]\NotificationRuleTemplates[City High Temperature Alert]</Template>
+        <ContentExample />
+      </AFNotificationRule>
+    </AFElement>
+    <AFElement>
+      <Name>Los Angeles</Name>
+      <Description />
+      <Template>City template</Template>
+      <IsAnnotated>false</IsAnnotated>
+      <Modifier>OSI\rdavin</Modifier>
+      <Comment />
+      <EffectiveDate>1970-01-01T00:00:00Z</EffectiveDate>
+      <ObsoleteDate>9999-12-31T23:59:59Z</ObsoleteDate>
+      <AFAttribute>
+        <Name>Cloud Cover</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>%</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Humidity</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>%</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Pressure</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>mbar</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Temperature</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>°C</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+        <AFAttribute>
+          <Name>Hot</Name>
+          <Description />
+          <IsHidden>false</IsHidden>
+          <IsManualDataEntry>false</IsManualDataEntry>
+          <IsConfigurationItem>false</IsConfigurationItem>
+          <IsExcluded>false</IsExcluded>
+          <Trait>Hi</Trait>
+          <DefaultUOM>°C</DefaultUOM>
+          <Type>Single</Type>
+          <TypeQualifier />
+          <Value default="true" type="Single">29</Value>
+          <DataReference />
+          <ConfigString />
+        </AFAttribute>
+        <AFAttribute>
+          <Name>Very Hot</Name>
+          <Description />
+          <IsHidden>false</IsHidden>
+          <IsManualDataEntry>false</IsManualDataEntry>
+          <IsConfigurationItem>false</IsConfigurationItem>
+          <IsExcluded>false</IsExcluded>
+          <Trait>HiHi</Trait>
+          <DefaultUOM>°C</DefaultUOM>
+          <Type>Single</Type>
+          <TypeQualifier />
+          <Value default="true" type="Single">39</Value>
+          <DataReference />
+          <ConfigString />
+        </AFAttribute>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Visibility</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>km</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Wind Speed</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>m/s</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAnalysis>
+        <Name>Hot City Analysis Template</Name>
+        <Description />
+        <Template>Hot City Analysis Template</Template>
+        <CaseTemplate />
+        <OutputTime />
+        <Status>Enabled</Status>
+        <PublishResults>false</PublishResults>
+        <Priority>High</Priority>
+        <MaxQueueSize>0</MaxQueueSize>
+        <GroupID>0</GroupID>
+        <Target>
+          <AFElementRef>Los Angeles</AFElementRef>
+        </Target>
+      </AFAnalysis>
+      <AFNotificationRule>
+        <Name>City High Temperature Alert</Name>
+        <Description />
+        <Status>Enabled</Status>
+        <MultiTriggerEventOption>HighestSeverity</MultiTriggerEventOption>
+        <ResendInterval>0</ResendInterval>
+        <NonrepetitionInterval>0</NonrepetitionInterval>
+        <Criteria>AnalysisName:"Hot City Analysis Template"</Criteria>
+        <Template>ElementTemplates[City template]\NotificationRuleTemplates[City High Temperature Alert]</Template>
+        <ContentExample />
+      </AFNotificationRule>
+    </AFElement>
+    <AFElement>
+      <Name>New York</Name>
+      <Description />
+      <Template>City template</Template>
+      <IsAnnotated>false</IsAnnotated>
+      <Modifier>OSI\rdavin</Modifier>
+      <Comment />
+      <EffectiveDate>1970-01-01T00:00:00Z</EffectiveDate>
+      <ObsoleteDate>9999-12-31T23:59:59Z</ObsoleteDate>
+      <AFAttribute>
+        <Name>Cloud Cover</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>%</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Humidity</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>%</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Pressure</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>mbar</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Temperature</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>°C</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+        <AFAttribute>
+          <Name>Hot</Name>
+          <Description />
+          <IsHidden>false</IsHidden>
+          <IsManualDataEntry>false</IsManualDataEntry>
+          <IsConfigurationItem>false</IsConfigurationItem>
+          <IsExcluded>false</IsExcluded>
+          <Trait>Hi</Trait>
+          <DefaultUOM>°C</DefaultUOM>
+          <Type>Single</Type>
+          <TypeQualifier />
+          <Value default="true" type="Single">29</Value>
+          <DataReference />
+          <ConfigString />
+        </AFAttribute>
+        <AFAttribute>
+          <Name>Very Hot</Name>
+          <Description />
+          <IsHidden>false</IsHidden>
+          <IsManualDataEntry>false</IsManualDataEntry>
+          <IsConfigurationItem>false</IsConfigurationItem>
+          <IsExcluded>false</IsExcluded>
+          <Trait>HiHi</Trait>
+          <DefaultUOM>°C</DefaultUOM>
+          <Type>Single</Type>
+          <TypeQualifier />
+          <Value default="true" type="Single">39</Value>
+          <DataReference />
+          <ConfigString />
+        </AFAttribute>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Visibility</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>km</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Wind Speed</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>m/s</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAnalysis>
+        <Name>Hot City Analysis Template</Name>
+        <Description />
+        <Template>Hot City Analysis Template</Template>
+        <CaseTemplate />
+        <OutputTime />
+        <Status>Enabled</Status>
+        <PublishResults>false</PublishResults>
+        <Priority>High</Priority>
+        <MaxQueueSize>0</MaxQueueSize>
+        <GroupID>0</GroupID>
+        <Target>
+          <AFElementRef>New York</AFElementRef>
+        </Target>
+      </AFAnalysis>
+      <AFNotificationRule>
+        <Name>City High Temperature Alert</Name>
+        <Description />
+        <Status>Enabled</Status>
+        <MultiTriggerEventOption>HighestSeverity</MultiTriggerEventOption>
+        <ResendInterval>0</ResendInterval>
+        <NonrepetitionInterval>0</NonrepetitionInterval>
+        <Criteria>AnalysisName:"Hot City Analysis Template"</Criteria>
+        <Template>ElementTemplates[City template]\NotificationRuleTemplates[City High Temperature Alert]</Template>
+        <ContentExample />
+      </AFNotificationRule>
+    </AFElement>
+    <AFElement>
+      <Name>San Francisco</Name>
+      <Description />
+      <Template>City template</Template>
+      <IsAnnotated>false</IsAnnotated>
+      <Modifier>OSI\rdavin</Modifier>
+      <Comment />
+      <EffectiveDate>1970-01-01T00:00:00Z</EffectiveDate>
+      <ObsoleteDate>9999-12-31T23:59:59Z</ObsoleteDate>
+      <AFAttribute>
+        <Name>Cloud Cover</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>%</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Humidity</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>%</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Pressure</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>mbar</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Temperature</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>°C</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+        <AFAttribute>
+          <Name>Hot</Name>
+          <Description />
+          <IsHidden>false</IsHidden>
+          <IsManualDataEntry>false</IsManualDataEntry>
+          <IsConfigurationItem>false</IsConfigurationItem>
+          <IsExcluded>false</IsExcluded>
+          <Trait>Hi</Trait>
+          <DefaultUOM>°C</DefaultUOM>
+          <Type>Single</Type>
+          <TypeQualifier />
+          <Value default="true" type="Single">29</Value>
+          <DataReference />
+          <ConfigString />
+        </AFAttribute>
+        <AFAttribute>
+          <Name>Very Hot</Name>
+          <Description />
+          <IsHidden>false</IsHidden>
+          <IsManualDataEntry>false</IsManualDataEntry>
+          <IsConfigurationItem>false</IsConfigurationItem>
+          <IsExcluded>false</IsExcluded>
+          <Trait>HiHi</Trait>
+          <DefaultUOM>°C</DefaultUOM>
+          <Type>Single</Type>
+          <TypeQualifier />
+          <Value default="true" type="Single">39</Value>
+          <DataReference />
+          <ConfigString />
+        </AFAttribute>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Visibility</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>km</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Wind Speed</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>m/s</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAnalysis>
+        <Name>Hot City Analysis Template</Name>
+        <Description />
+        <Template>Hot City Analysis Template</Template>
+        <CaseTemplate />
+        <OutputTime />
+        <Status>Enabled</Status>
+        <PublishResults>false</PublishResults>
+        <Priority>High</Priority>
+        <MaxQueueSize>0</MaxQueueSize>
+        <GroupID>0</GroupID>
+        <Target>
+          <AFElementRef>San Francisco</AFElementRef>
+        </Target>
+      </AFAnalysis>
+      <AFNotificationRule>
+        <Name>City High Temperature Alert</Name>
+        <Description />
+        <Status>Enabled</Status>
+        <MultiTriggerEventOption>HighestSeverity</MultiTriggerEventOption>
+        <ResendInterval>0</ResendInterval>
+        <NonrepetitionInterval>0</NonrepetitionInterval>
+        <Criteria>AnalysisName:"Hot City Analysis Template"</Criteria>
+        <Template>ElementTemplates[City template]\NotificationRuleTemplates[City High Temperature Alert]</Template>
+        <ContentExample />
+      </AFNotificationRule>
+    </AFElement>
+    <AFElement>
+      <Name>Washington</Name>
+      <Description />
+      <Template>City template</Template>
+      <IsAnnotated>false</IsAnnotated>
+      <Modifier>OSI\rdavin</Modifier>
+      <Comment />
+      <EffectiveDate>1970-01-01T00:00:00Z</EffectiveDate>
+      <ObsoleteDate>9999-12-31T23:59:59Z</ObsoleteDate>
+      <AFAttribute>
+        <Name>Cloud Cover</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>%</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Humidity</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>%</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Pressure</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>mbar</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Temperature</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>°C</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+        <AFAttribute>
+          <Name>Hot</Name>
+          <Description />
+          <IsHidden>false</IsHidden>
+          <IsManualDataEntry>false</IsManualDataEntry>
+          <IsConfigurationItem>false</IsConfigurationItem>
+          <IsExcluded>false</IsExcluded>
+          <Trait>Hi</Trait>
+          <DefaultUOM>°C</DefaultUOM>
+          <Type>Single</Type>
+          <TypeQualifier />
+          <Value default="true" type="Single">29</Value>
+          <DataReference />
+          <ConfigString />
+        </AFAttribute>
+        <AFAttribute>
+          <Name>Very Hot</Name>
+          <Description />
+          <IsHidden>false</IsHidden>
+          <IsManualDataEntry>false</IsManualDataEntry>
+          <IsConfigurationItem>false</IsConfigurationItem>
+          <IsExcluded>false</IsExcluded>
+          <Trait>HiHi</Trait>
+          <DefaultUOM>°C</DefaultUOM>
+          <Type>Single</Type>
+          <TypeQualifier />
+          <Value default="true" type="Single">39</Value>
+          <DataReference />
+          <ConfigString />
+        </AFAttribute>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Visibility</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>km</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAttribute>
+        <Name>Wind Speed</Name>
+        <Description />
+        <IsHidden>false</IsHidden>
+        <IsManualDataEntry>false</IsManualDataEntry>
+        <IsConfigurationItem>false</IsConfigurationItem>
+        <IsExcluded>false</IsExcluded>
+        <Trait />
+        <DefaultUOM>m/s</DefaultUOM>
+        <Type>Single</Type>
+        <TypeQualifier />
+        <DataReference>PI Point</DataReference>
+        <ConfigString>\\%Server%\%Element%_%Attribute%</ConfigString>
+      </AFAttribute>
+      <AFAnalysis>
+        <Name>Hot City Analysis Template</Name>
+        <Description />
+        <Template>Hot City Analysis Template</Template>
+        <CaseTemplate />
+        <OutputTime />
+        <Status>Enabled</Status>
+        <PublishResults>false</PublishResults>
+        <Priority>High</Priority>
+        <MaxQueueSize>0</MaxQueueSize>
+        <GroupID>0</GroupID>
+        <Target>
+          <AFElementRef>Washington</AFElementRef>
+        </Target>
+      </AFAnalysis>
+      <AFNotificationRule>
+        <Name>City High Temperature Alert</Name>
+        <Description />
+        <Status>Enabled</Status>
+        <MultiTriggerEventOption>HighestSeverity</MultiTriggerEventOption>
+        <ResendInterval>0</ResendInterval>
+        <NonrepetitionInterval>0</NonrepetitionInterval>
+        <Criteria>AnalysisName:"Hot City Analysis Template"</Criteria>
+        <Template>ElementTemplates[City template]\NotificationRuleTemplates[City High Temperature Alert]</Template>
+        <ContentExample />
+      </AFNotificationRule>
+    </AFElement>
+  </AFDatabase>
+</AF>
