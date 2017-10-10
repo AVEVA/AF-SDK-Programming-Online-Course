@@ -6,6 +6,15 @@ This facilitator-led online course offered by OSIsoft's Learning Department is d
 
 Complete walkthrough of the code can be found in the videos avaiable at the [course website](https://pisquare.osisoft.com/community/Learn-PI/developing-applications-with-PI-AF-SDK). If you are taking the course, please feel free to download or fork the repository so you can work off your own copy. Feel free to take ownership of your copy and modify the code as you see fit.
 
+## PI Developer Series
+This associated course is a part of the PI Developers Series.  See these other related links:
+
+| Title | Course Website | GitHub Repository |
+| --- | --- | --- |
+| Developing Applications with AF SDK | [link](https://pisquare.osisoft.com/community/Learn-PI/developing-applications-with-PI-AF-SDK) | [link](https://github.com/Rick-at-OSIsoft/AF-SDK-Programming-Online-Course) |
+| Programming in PI Web API | [link](https://pisquare.osisoft.com/community/Learn-PI/programming-in-pi-web-api) | [link](https://github.com/osisoft/PI-Web-API-Programming-Online-Course) |
+| Configuring Calculations with PI ACE | [link](https://pisquare.osisoft.com/community/Learn-PI/configuring-calculations-with-pi-ace) | none |
+
 # License
 
 Copyright 2017 OSIsoft, LLC
