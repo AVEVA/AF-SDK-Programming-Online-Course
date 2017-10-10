@@ -11,7 +11,7 @@ Although this course is intended for beginners to AF SDK, a prerequisite is prio
 ## PI Developer Series
 This associated course is a part of the PI Developers Series.  See these other related links:
 
-| Title | Course Website | GitHub Repository |
+| OSIsoft Learning Title | Course Website | GitHub Repository |
 | :--- | :---: | :---: |
 | Developing Applications with AF SDK | [link](https://pisquare.osisoft.com/community/Learn-PI/developing-applications-with-PI-AF-SDK) | [link](https://github.com/Rick-at-OSIsoft/AF-SDK-Programming-Online-Course) |
 | Programming in PI Web API | [link](https://pisquare.osisoft.com/community/Learn-PI/programming-in-pi-web-api) | [link](https://github.com/osisoft/PI-Web-API-Programming-Online-Course) |
