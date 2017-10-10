@@ -1,10 +1,7 @@
-# developing-applications-with-af-sdk
+# AF-SDK-Programming-Online-Course
 Solutions to exercises for online course "Developing Applications with AF SDK".
 
-# Do NOT Publish on PI Square
-Please DO NOT publish, announce, broadcast, or advertise the existence of this repository on PI Square.  What is presented here are
-solutions to exercises.  Grant each student the courtesy of working through the exercises on their own, otherwise you are depriving
-them of a valuable learning opportunity.
+
 
 # License
 
