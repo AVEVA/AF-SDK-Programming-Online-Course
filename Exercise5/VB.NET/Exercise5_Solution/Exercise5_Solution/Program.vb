@@ -30,8 +30,7 @@ Namespace Exercise5_Solution
 
         Public Sub Main(args As String())
 
-            ' Dim dataArchive = New PIServers().DefaultPIServer
-            Dim dataArchive = New PIServers().Item("rdavin7250")
+            Dim dataArchive = New PIServers().DefaultPIServer
 
             Dim points = GetOrCreatePIPoints(dataArchive, New String() {"New York_Pressure", "New York_Temperature", "New York_Humidity"}, "AFSDKWS_")
 
