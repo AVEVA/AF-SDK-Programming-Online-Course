@@ -9,7 +9,7 @@ Complete walkthrough of the code can be found in the videos avaiable at the [cou
 Although this course is intended for beginners to AF SDK, a prerequisite is prior development experience with .NET and Visual Studio.
 
 ## PI Developer Series
-This associated course is a part of the PI Developers Series.  See these other related links:
+This associated course is a part of the PI Developers Series offered by OSIsoft Learning.  See the links below for more information.
 
 | OSIsoft Learning Title | Course Website | GitHub Repository |
 | :--- | :---: | :---: |
