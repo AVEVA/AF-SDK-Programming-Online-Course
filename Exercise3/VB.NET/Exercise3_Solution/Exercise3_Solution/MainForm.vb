@@ -1,4 +1,4 @@
-'***************************************************************************
+﻿'***************************************************************************
 ' Copyright 2017 OSIsoft, LLC.
 '   Licensed under the Apache License, Version 2.0 (the "License");
 '   you may not use this file except in compliance with the License.
@@ -178,7 +178,8 @@ Public Class MainForm
         Selected.EndTime = tbEndTime.Text
 
         afDatabasePicker1.SystemPicker = piSystemPicker1
-        afTreeView1.AFRoot = afDatabasePicker1.AFDatabase
+        ' Changed for Exercise 3
+        afElementFindCtrl1.Database = afDatabasePicker1.AFDatabase
 
         CheckAllButtons()
     End Sub
@@ -195,13 +196,27 @@ Public Class MainForm
         End Get
     End Property
 
+    ' Added to Exercise 3
+    Private ReadOnly Property Element As AFElement
+        Get
+            Return afElementFindCtrl1.AFElement
+        End Get
+    End Property
+
+    ' Changed from Exercise 2
     Private Sub afDatabasePicker1_SelectionChange(ByVal sender As Object, ByVal e As OSIsoft.AF.UI.SelectionChangeEventArgs) Handles afDatabasePicker1.SelectionChange
-        afTreeView1.AFRoot = Database?.Elements
-        Me.CheckAllButtons()
+        afElementFindCtrl1.Database = Database
+        If (Database IsNot Nothing) AndAlso (Database.Elements.Count > 0) Then
+            afElementFindCtrl1.AFElement = Database.Elements(0)
+        Else
+            afElementFindCtrl1.AFElement = Nothing
+        End If
+        afElementFindCtrl1_AFElementUpdated(afElementFindCtrl1, New CancelEventArgs())
     End Sub
 
-    Private Sub afTreeView1_AfterSelect(ByVal sender As Object, ByVal e As TreeViewEventArgs) Handles afTreeView1.AfterSelect
-        Selected.Element = TryCast(afTreeView1.AFSelection, AFElement)
+    ' Added to Exercise 3
+    Private Sub afElementFindCtrl1_AFElementUpdated(ByVal sender As Object, ByVal e As CancelEventArgs) Handles afElementFindCtrl1.AFElementUpdated
+        Selected.Element = afElementFindCtrl1.AFElement
         CheckAllButtons()
     End Sub
 
@@ -309,7 +324,7 @@ Public Class MainForm
 
     Private Sub CheckAllButtons()
         ' Added for Exercise 3
-        btnNotifications.Enabled = (Selected.Element IsNot Nothing)
+        btnNotifications.Enabled = (Selected.Attribute IsNot Nothing)
 
         btnViewElement.Enabled = (Selected.Attribute IsNot Nothing)
         btnGetData.Enabled = Selected.IsValid
@@ -322,15 +337,18 @@ Public Class MainForm
     End Sub
 
     Private Sub btnGetData_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnGetData.Click
+        ' Change for Exercise 3 anywhere you see gridDataValues:
         gridDataValues.Rows.Clear()
 
         Dim data = Selected.Attribute.Data
 
         If (Selected.DataMethod = DataMethod.Summary) Then
+            ' Added for Exercise 3:
             SetupGrid("Summary Type", "Value", "Timestamp")
             Dim summaryDict = data.Summary(Selected.TimeRange.Value, AFSummaryTypes.All, AFCalculationBasis.TimeWeighted, AFTimestampCalculation.Auto)
             For Each summary In summaryDict
                 Dim value = summary.Value
+                ' Changed for Exercise 3:
                 Dim pv As Object = value.Value
                 If (value.UOM IsNot Nothing) Then
                     pv = $"{value.Value} {value.UOM.Abbreviation}"
@@ -338,6 +356,7 @@ Public Class MainForm
                 gridDataValues.Rows.Add(summary.Key, pv, value.Timestamp)
             Next
         Else
+            ' Added for Exercise 3:
             SetupGrid("Timestamp", "Value")
             Dim values = New AFValues
             If (Selected.DataMethod = DataMethod.InterpolatedValues) Then
@@ -348,6 +367,7 @@ Public Class MainForm
             End If
 
             For Each value In values
+                ' Changed for Exercise 3:
                 Dim pv As Object = value.Value
                 If (value.UOM IsNot Nothing) Then
                     pv = $"{value.Value} {value.UOM.Abbreviation}"
@@ -360,6 +380,7 @@ Public Class MainForm
         CheckAllButtons()
     End Sub
 
+    ' Added for Exercise 3:
     Private Sub SetupGrid(ParamArray ByVal columnHeadings() As String)
         gridDataValues.ColumnCount = 0
         For i As Integer = 0 To columnHeadings.Length - 1
@@ -368,6 +389,7 @@ Public Class MainForm
         Next i
     End Sub
 
+    ' Added for Exercise 3:
     Private Sub PrepColumn(ByVal columnIndex As Integer)
         Dim col = gridDataValues.Columns(columnIndex)
         col.Width = 150
@@ -425,6 +447,10 @@ Public Class MainForm
         cboxInterval.Items.Add(TimeSpan.FromDays(7))
     End Sub
 
+#Region "Cool Grid Stuff"
+
+    ' Added for Exercise 3.  Purely just some fun "bells and whistles" stuff.
+
     ' How to show row number in the row header
     ' http://stackoverflow.com/questions/9581626/show-row-number-in-row-header-of-a-datagridview
     Private Sub gridDataValues_RowPostPaint(ByVal sender As Object, ByVal e As DataGridViewRowPostPaintEventArgs) Handles gridDataValues.RowPostPaint 'Handles gridDataValues.RowPostPaint
@@ -458,8 +484,13 @@ Public Class MainForm
         e.Graphics.DrawString(id, font, SystemBrushes.InactiveCaptionText, headerBounds, centerFormat)
     End Sub
 
+#End Region
+
+    ' Required addition for Exercise 3:
     Private Sub btnNotifications_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNotifications.Click
+        ' Surely we must pass the element.  Why not include the Start and End times too?
         Dim dialogForm = New NotificationsForm(Selected.Element, Selected.StartTime, Selected.EndTime)
         dialogForm.ShowDialog(Me)
     End Sub
+
 End Class

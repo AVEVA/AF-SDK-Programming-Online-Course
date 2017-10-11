@@ -23,6 +23,7 @@ Partial Class MainForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.gboxWeather = New System.Windows.Forms.GroupBox()
         Me.label5 = New System.Windows.Forms.Label()
         Me.cboxUom = New System.Windows.Forms.ComboBox()
@@ -49,14 +50,16 @@ Partial Class MainForm
         Me.label4 = New System.Windows.Forms.Label()
         Me.label2 = New System.Windows.Forms.Label()
         Me.label1 = New System.Windows.Forms.Label()
-        Me.afTreeView1 = New OSIsoft.AF.UI.AFTreeView()
         Me.afDatabasePicker1 = New OSIsoft.AF.UI.AFDatabasePicker()
         Me.piSystemPicker1 = New OSIsoft.AF.UI.PISystemPicker()
         Me.gridDataValues = New System.Windows.Forms.DataGridView()
         Me.btnNotifications = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.afElementFindCtrl1 = New OSIsoft.AF.UI.AFElementFindCtrl()
         Me.gboxWeather.SuspendLayout()
         Me.gboxData.SuspendLayout()
         CType(Me.gridDataValues, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'gboxWeather
@@ -69,7 +72,7 @@ Partial Class MainForm
         Me.gboxWeather.Controls.Add(Me.rbWindSpeed)
         Me.gboxWeather.Controls.Add(Me.rbCloudCover)
         Me.gboxWeather.Controls.Add(Me.rbTemperature)
-        Me.gboxWeather.Location = New System.Drawing.Point(360, 9)
+        Me.gboxWeather.Location = New System.Drawing.Point(15, 249)
         Me.gboxWeather.Name = "gboxWeather"
         Me.gboxWeather.Size = New System.Drawing.Size(406, 112)
         Me.gboxWeather.TabIndex = 21
@@ -158,8 +161,7 @@ Partial Class MainForm
         '
         'btnViewElement
         '
-        Me.btnViewElement.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.btnViewElement.Location = New System.Drawing.Point(15, 642)
+        Me.btnViewElement.Location = New System.Drawing.Point(63, 192)
         Me.btnViewElement.Name = "btnViewElement"
         Me.btnViewElement.Size = New System.Drawing.Size(140, 30)
         Me.btnViewElement.TabIndex = 17
@@ -170,15 +172,15 @@ Partial Class MainForm
         '
         Me.cboxInterval.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboxInterval.FormattingEnabled = True
-        Me.cboxInterval.Location = New System.Drawing.Point(89, 84)
+        Me.cboxInterval.Location = New System.Drawing.Point(81, 101)
         Me.cboxInterval.Name = "cboxInterval"
-        Me.cboxInterval.Size = New System.Drawing.Size(179, 21)
+        Me.cboxInterval.Size = New System.Drawing.Size(140, 21)
         Me.cboxInterval.TabIndex = 7
         '
         'rbSummary
         '
         Me.rbSummary.AutoSize = True
-        Me.rbSummary.Location = New System.Drawing.Point(351, 81)
+        Me.rbSummary.Location = New System.Drawing.Point(268, 101)
         Me.rbSummary.Name = "rbSummary"
         Me.rbSummary.Size = New System.Drawing.Size(68, 17)
         Me.rbSummary.TabIndex = 6
@@ -188,7 +190,7 @@ Partial Class MainForm
         'rbInterpolatedValues
         '
         Me.rbInterpolatedValues.AutoSize = True
-        Me.rbInterpolatedValues.Location = New System.Drawing.Point(351, 58)
+        Me.rbInterpolatedValues.Location = New System.Drawing.Point(268, 78)
         Me.rbInterpolatedValues.Name = "rbInterpolatedValues"
         Me.rbInterpolatedValues.Size = New System.Drawing.Size(116, 17)
         Me.rbInterpolatedValues.TabIndex = 6
@@ -199,7 +201,7 @@ Partial Class MainForm
         '
         Me.rbRecordedValues.AutoSize = True
         Me.rbRecordedValues.Checked = True
-        Me.rbRecordedValues.Location = New System.Drawing.Point(351, 35)
+        Me.rbRecordedValues.Location = New System.Drawing.Point(268, 55)
         Me.rbRecordedValues.Name = "rbRecordedValues"
         Me.rbRecordedValues.Size = New System.Drawing.Size(107, 17)
         Me.rbRecordedValues.TabIndex = 6
@@ -209,24 +211,24 @@ Partial Class MainForm
         '
         'tbEndTime
         '
-        Me.tbEndTime.Location = New System.Drawing.Point(89, 55)
+        Me.tbEndTime.Location = New System.Drawing.Point(81, 68)
         Me.tbEndTime.Name = "tbEndTime"
-        Me.tbEndTime.Size = New System.Drawing.Size(180, 20)
+        Me.tbEndTime.Size = New System.Drawing.Size(140, 20)
         Me.tbEndTime.TabIndex = 5
         Me.tbEndTime.Text = "*"
         '
         'tbStartTime
         '
-        Me.tbStartTime.Location = New System.Drawing.Point(89, 24)
+        Me.tbStartTime.Location = New System.Drawing.Point(81, 34)
         Me.tbStartTime.Name = "tbStartTime"
-        Me.tbStartTime.Size = New System.Drawing.Size(180, 20)
+        Me.tbStartTime.Size = New System.Drawing.Size(140, 20)
         Me.tbStartTime.TabIndex = 5
         Me.tbStartTime.Text = "y"
         '
         'lblMetaInfo
         '
         Me.lblMetaInfo.AutoSize = True
-        Me.lblMetaInfo.Location = New System.Drawing.Point(358, 257)
+        Me.lblMetaInfo.Location = New System.Drawing.Point(437, 12)
         Me.lblMetaInfo.Name = "lblMetaInfo"
         Me.lblMetaInfo.Size = New System.Drawing.Size(65, 13)
         Me.lblMetaInfo.TabIndex = 13
@@ -235,7 +237,7 @@ Partial Class MainForm
         'label3
         '
         Me.label3.AutoSize = True
-        Me.label3.Location = New System.Drawing.Point(28, 60)
+        Me.label3.Location = New System.Drawing.Point(20, 71)
         Me.label3.Name = "label3"
         Me.label3.Size = New System.Drawing.Size(52, 13)
         Me.label3.TabIndex = 4
@@ -244,7 +246,7 @@ Partial Class MainForm
         'label7
         '
         Me.label7.AutoSize = True
-        Me.label7.Location = New System.Drawing.Point(28, 85)
+        Me.label7.Location = New System.Drawing.Point(20, 104)
         Me.label7.Name = "label7"
         Me.label7.Size = New System.Drawing.Size(42, 13)
         Me.label7.TabIndex = 4
@@ -253,7 +255,7 @@ Partial Class MainForm
         'label6
         '
         Me.label6.AutoSize = True
-        Me.label6.Location = New System.Drawing.Point(28, 27)
+        Me.label6.Location = New System.Drawing.Point(17, 37)
         Me.label6.Name = "label6"
         Me.label6.Size = New System.Drawing.Size(55, 13)
         Me.label6.TabIndex = 4
@@ -271,9 +273,9 @@ Partial Class MainForm
         Me.gboxData.Controls.Add(Me.label7)
         Me.gboxData.Controls.Add(Me.label6)
         Me.gboxData.Controls.Add(Me.label8)
-        Me.gboxData.Location = New System.Drawing.Point(360, 127)
+        Me.gboxData.Location = New System.Drawing.Point(15, 378)
         Me.gboxData.Name = "gboxData"
-        Me.gboxData.Size = New System.Drawing.Size(529, 114)
+        Me.gboxData.Size = New System.Drawing.Size(406, 149)
         Me.gboxData.TabIndex = 19
         Me.gboxData.TabStop = False
         Me.gboxData.Text = "Data Settings"
@@ -281,15 +283,15 @@ Partial Class MainForm
         'label8
         '
         Me.label8.AutoSize = True
-        Me.label8.Location = New System.Drawing.Point(348, 16)
+        Me.label8.Location = New System.Drawing.Point(265, 34)
         Me.label8.Name = "label8"
-        Me.label8.Size = New System.Drawing.Size(43, 13)
+        Me.label8.Size = New System.Drawing.Size(69, 13)
         Me.label8.TabIndex = 4
-        Me.label8.Text = "Method"
+        Me.label8.Text = "Data Method"
         '
         'btnGetData
         '
-        Me.btnGetData.Location = New System.Drawing.Point(784, 56)
+        Me.btnGetData.Location = New System.Drawing.Point(316, 551)
         Me.btnGetData.Name = "btnGetData"
         Me.btnGetData.Size = New System.Drawing.Size(105, 28)
         Me.btnGetData.TabIndex = 18
@@ -299,16 +301,16 @@ Partial Class MainForm
         'label4
         '
         Me.label4.AutoSize = True
-        Me.label4.Location = New System.Drawing.Point(14, 90)
+        Me.label4.Location = New System.Drawing.Point(47, 122)
         Me.label4.Name = "label4"
-        Me.label4.Size = New System.Drawing.Size(73, 13)
+        Me.label4.Size = New System.Drawing.Size(98, 13)
         Me.label4.TabIndex = 14
-        Me.label4.Text = "Element Tree:"
+        Me.label4.Text = "Element of Interest:"
         '
         'label2
         '
         Me.label2.AutoSize = True
-        Me.label2.Location = New System.Drawing.Point(12, 50)
+        Me.label2.Location = New System.Drawing.Point(45, 71)
         Me.label2.Name = "label2"
         Me.label2.Size = New System.Drawing.Size(72, 13)
         Me.label2.TabIndex = 15
@@ -317,44 +319,17 @@ Partial Class MainForm
         'label1
         '
         Me.label1.AutoSize = True
-        Me.label1.Location = New System.Drawing.Point(13, 9)
+        Me.label1.Location = New System.Drawing.Point(47, 19)
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(70, 13)
         Me.label1.TabIndex = 16
         Me.label1.Text = "Asset Server:"
         '
-        'afTreeView1
-        '
-        Me.afTreeView1.HideSelection = False
-        Me.afTreeView1.Location = New System.Drawing.Point(14, 106)
-        Me.afTreeView1.Name = "afTreeView1"
-        Me.afTreeView1.ShowAnalyses = False
-        Me.afTreeView1.ShowAnalysisTemplates = False
-        Me.afTreeView1.ShowCases = False
-        Me.afTreeView1.ShowCaseTemplates = False
-        Me.afTreeView1.ShowCategories = False
-        Me.afTreeView1.ShowConfigurationDatabase = OSIsoft.AF.UI.ShowConfigurationDatabase.Hide
-        Me.afTreeView1.ShowContacts = False
-        Me.afTreeView1.ShowDatabases = False
-        Me.afTreeView1.ShowElementTemplates = False
-        Me.afTreeView1.ShowEnumerations = False
-        Me.afTreeView1.ShowEventFrameTemplates = False
-        Me.afTreeView1.ShowModelTemplates = False
-        Me.afTreeView1.ShowNodeToolTips = True
-        Me.afTreeView1.ShowNotificationTemplates = False
-        Me.afTreeView1.ShowPlugIns = False
-        Me.afTreeView1.ShowReferenceTypes = False
-        Me.afTreeView1.ShowTableConnections = False
-        Me.afTreeView1.ShowTables = False
-        Me.afTreeView1.ShowTransferTemplates = False
-        Me.afTreeView1.Size = New System.Drawing.Size(320, 500)
-        Me.afTreeView1.TabIndex = 12
-        '
         'afDatabasePicker1
         '
         Me.afDatabasePicker1.AccessibleDescription = "Database Picker"
         Me.afDatabasePicker1.AccessibleName = "Database Picker"
-        Me.afDatabasePicker1.Location = New System.Drawing.Point(14, 66)
+        Me.afDatabasePicker1.Location = New System.Drawing.Point(48, 87)
         Me.afDatabasePicker1.Name = "afDatabasePicker1"
         Me.afDatabasePicker1.ShowBegin = False
         Me.afDatabasePicker1.ShowConfigurationDatabase = OSIsoft.AF.UI.ShowConfigurationDatabase.Hide
@@ -376,7 +351,7 @@ Partial Class MainForm
         Me.piSystemPicker1.AccessibleDescription = "PI System Picker"
         Me.piSystemPicker1.AccessibleName = "PI System Picker"
         Me.piSystemPicker1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.piSystemPicker1.Location = New System.Drawing.Point(14, 25)
+        Me.piSystemPicker1.Location = New System.Drawing.Point(48, 35)
         Me.piSystemPicker1.LoginPromptSetting = OSIsoft.AF.UI.PISystemPicker.LoginPromptSettingOptions.[Default]
         Me.piSystemPicker1.Name = "piSystemPicker1"
         Me.piSystemPicker1.ShowBegin = False
@@ -401,27 +376,53 @@ Partial Class MainForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gridDataValues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.gridDataValues.Location = New System.Drawing.Point(360, 282)
+        Me.gridDataValues.Location = New System.Drawing.Point(440, 31)
         Me.gridDataValues.Name = "gridDataValues"
         Me.gridDataValues.RowHeadersWidth = 80
-        Me.gridDataValues.Size = New System.Drawing.Size(526, 390)
+        Me.gridDataValues.Size = New System.Drawing.Size(580, 548)
         Me.gridDataValues.TabIndex = 22
         '
         'btnNotifications
         '
         Me.btnNotifications.Enabled = False
-        Me.btnNotifications.Location = New System.Drawing.Point(194, 642)
+        Me.btnNotifications.Location = New System.Drawing.Point(243, 192)
         Me.btnNotifications.Name = "btnNotifications"
         Me.btnNotifications.Size = New System.Drawing.Size(140, 30)
         Me.btnNotifications.TabIndex = 23
         Me.btnNotifications.Text = "View Notifications"
         Me.btnNotifications.UseVisualStyleBackColor = True
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.afElementFindCtrl1)
+        Me.GroupBox1.Controls.Add(Me.label1)
+        Me.GroupBox1.Controls.Add(Me.piSystemPicker1)
+        Me.GroupBox1.Controls.Add(Me.afDatabasePicker1)
+        Me.GroupBox1.Controls.Add(Me.label2)
+        Me.GroupBox1.Controls.Add(Me.label4)
+        Me.GroupBox1.Location = New System.Drawing.Point(15, 12)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(406, 174)
+        Me.GroupBox1.TabIndex = 24
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Select City"
+        '
+        'afElementFindCtrl1
+        '
+        Me.afElementFindCtrl1.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange
+        Me.afElementFindCtrl1.Location = New System.Drawing.Point(48, 139)
+        Me.afElementFindCtrl1.Margin = New System.Windows.Forms.Padding(4)
+        Me.afElementFindCtrl1.MinimumSize = New System.Drawing.Size(0, 22)
+        Me.afElementFindCtrl1.Name = "afElementFindCtrl1"
+        Me.afElementFindCtrl1.Size = New System.Drawing.Size(320, 24)
+        Me.afElementFindCtrl1.TabIndex = 17
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(915, 698)
+        Me.ClientSize = New System.Drawing.Size(1040, 598)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnNotifications)
         Me.Controls.Add(Me.gridDataValues)
         Me.Controls.Add(Me.gboxWeather)
@@ -429,12 +430,6 @@ Partial Class MainForm
         Me.Controls.Add(Me.lblMetaInfo)
         Me.Controls.Add(Me.gboxData)
         Me.Controls.Add(Me.btnGetData)
-        Me.Controls.Add(Me.label4)
-        Me.Controls.Add(Me.label2)
-        Me.Controls.Add(Me.label1)
-        Me.Controls.Add(Me.afTreeView1)
-        Me.Controls.Add(Me.afDatabasePicker1)
-        Me.Controls.Add(Me.piSystemPicker1)
         Me.Name = "MainForm"
         Me.Text = "Weather AF Applet"
         Me.gboxWeather.ResumeLayout(False)
@@ -442,6 +437,8 @@ Partial Class MainForm
         Me.gboxData.ResumeLayout(False)
         Me.gboxData.PerformLayout()
         CType(Me.gridDataValues, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -473,9 +470,10 @@ Partial Class MainForm
     Private WithEvents label4 As Label
     Private WithEvents label2 As Label
     Private WithEvents label1 As Label
-    Private WithEvents afTreeView1 As OSIsoft.AF.UI.AFTreeView
     Private WithEvents afDatabasePicker1 As OSIsoft.AF.UI.AFDatabasePicker
     Private WithEvents piSystemPicker1 As OSIsoft.AF.UI.PISystemPicker
     Private WithEvents gridDataValues As DataGridView
     Private WithEvents btnNotifications As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents afElementFindCtrl1 As OSIsoft.AF.UI.AFElementFindCtrl
 End Class
