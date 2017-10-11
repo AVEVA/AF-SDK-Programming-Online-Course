@@ -1,8 +1,9 @@
-/***************************************************************************
+﻿/***************************************************************************
    Copyright 2017 OSIsoft, LLC.
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
+
        http://www.apache.org/licenses/LICENSE-2.0
    
    Unless required by applicable law or agreed to in writing, software
@@ -11,7 +12,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
  ***************************************************************************/
-
+ 
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -109,9 +110,6 @@ namespace Exercise3_Solution
 
             lblMetaInfo.Text = InitialMetaText;
 
-            ////To have text align correctly in listbox, we will use a Fixed Width font
-            //gridDataValues.Font = new Font("Consolas", 9, FontStyle.Regular);
-
             FillIntervalPicks();
             cboxInterval.Enabled = false;
 
@@ -126,23 +124,35 @@ namespace Exercise3_Solution
             Selected.EndTime = tbEndTime.Text;
 
             afDatabasePicker1.SystemPicker = piSystemPicker1;
-            afTreeView1.AFRoot = afDatabasePicker1.AFDatabase;
+            afElementFindCtrl1.Database = afDatabasePicker1.AFDatabase;
 
             CheckAllButtons();
         }
 
         private PISystem AssetServer => piSystemPicker1.PISystem;
         private AFDatabase Database => afDatabasePicker1.AFDatabase;
+        // Added to Exercise 3:
+        private AFElement Element => afElementFindCtrl1.AFElement;
 
+        // Changed from Exercise 2:
         private void afDatabasePicker1_SelectionChange(object sender, OSIsoft.AF.UI.SelectionChangeEventArgs e)
         {
-            afTreeView1.AFRoot = Database?.Elements;
-            CheckAllButtons();
+            afElementFindCtrl1.Database = Database;
+            if (Database != null && Database.Elements.Count > 0)
+            {
+                afElementFindCtrl1.AFElement = Database.Elements[0];
+            }
+            else
+            {
+                afElementFindCtrl1.AFElement = null;
+            }
+            afElementFindCtrl1_AFElementUpdated(afElementFindCtrl1, new CancelEventArgs());
         }
 
-        private void afTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        // Added to Exercise 3:
+        private void afElementFindCtrl1_AFElementUpdated(object sender, CancelEventArgs e)
         {
-            Selected.Element = afTreeView1.AFSelection as AFElement;
+            Selected.Element = afElementFindCtrl1.AFElement;
             CheckAllButtons();
         }
 
@@ -252,8 +262,8 @@ namespace Exercise3_Solution
 
         private void CheckAllButtons()
         {
-            // Added for Exercise 3
-            btnNotifications.Enabled = (Selected.Element != null);
+            // Added for Exercise 3:
+            btnNotifications.Enabled = (Selected.Attribute != null);
 
             btnViewElement.Enabled = (Selected.Attribute != null);
             btnGetData.Enabled = Selected.IsValid;
@@ -263,23 +273,27 @@ namespace Exercise3_Solution
 
         private void btnGetData_Click(object sender, EventArgs e)
         {
+            // Change for Exercise 3 anywhere you see gridDataValues:
             gridDataValues.Rows.Clear();
 
             var data = Selected.Attribute.Data;
 
             if (Selected.DataMethod == DataMethod.Summary)
             {
+                // Added for Exercise 3:
                 SetupGrid("Summary Type", "Value", "Timestamp");
-                var summaryDict = Selected.Attribute.Data.Summary(Selected.TimeRange.Value, AFSummaryTypes.All, AFCalculationBasis.TimeWeighted, AFTimestampCalculation.Auto);
+                var summaryDict = data.Summary(Selected.TimeRange.Value, AFSummaryTypes.All, AFCalculationBasis.TimeWeighted, AFTimestampCalculation.Auto);
                 foreach (var summary in summaryDict)
                 {
                     var value = summary.Value;
+                    // Changed for Exercise 3:
                     object pv = (value.UOM != null) ? $"{value.Value} {value.UOM.Abbreviation}" : value.Value;
                     gridDataValues.Rows.Add(summary.Key, pv, value.Timestamp);
                 }
             }
             else
             {
+                // Added for Exercise 3:
                 SetupGrid("Timestamp", "Value");
                 var values = new AFValues();
 
@@ -295,6 +309,7 @@ namespace Exercise3_Solution
 
                 foreach (var value in values)
                 {
+                    // Changed for Exercise 3:
                     object pv = (value.UOM != null) ? $"{value.Value} {value.UOM.Abbreviation}" : value.Value;
                     gridDataValues.Rows.Add(value.Timestamp, pv);
                 }
@@ -306,6 +321,7 @@ namespace Exercise3_Solution
             CheckAllButtons();
         }
 
+        // Added for Exercise 3:
         private void SetupGrid(params string[] columnHeadings)
         {
             gridDataValues.ColumnCount = 0;
@@ -316,6 +332,7 @@ namespace Exercise3_Solution
             }
         }
 
+        // Added for Exercise 3:
         private void PrepColumn(int columnIndex)
         {
             var col = gridDataValues.Columns[columnIndex];
@@ -381,6 +398,9 @@ namespace Exercise3_Solution
         }
 
 
+        #region "Cool Grid Stuff"
+
+        // Added for Exercise 3.  Purely just some fun "bells and whistles" stuff.
 
         // How to show row number in the row header
         // http://stackoverflow.com/questions/9581626/show-row-number-in-row-header-of-a-datagridview
@@ -416,8 +436,12 @@ namespace Exercise3_Solution
             e.Graphics.DrawString(id, font, SystemBrushes.InactiveCaptionText, headerBounds, centerFormat);
         }
 
+        #endregion
+
+        // Required addition for Exercise 3:
         private void btnNotifications_Click(object sender, EventArgs e)
         {
+            // Surely we must pass the element.  Why not include the Start and End times too?
             var dialogForm = new NotificationsForm(Selected.Element, Selected.StartTime, Selected.EndTime);
             dialogForm.ShowDialog(this);
         }

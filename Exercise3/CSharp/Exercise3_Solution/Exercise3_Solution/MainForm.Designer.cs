@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.piSystemPicker1 = new OSIsoft.AF.UI.PISystemPicker();
             this.afDatabasePicker1 = new OSIsoft.AF.UI.AFDatabasePicker();
-            this.afTreeView1 = new OSIsoft.AF.UI.AFTreeView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,9 +59,12 @@
             this.lblMetaInfo = new System.Windows.Forms.Label();
             this.gridDataValues = new System.Windows.Forms.DataGridView();
             this.btnNotifications = new System.Windows.Forms.Button();
+            this.afElementFindCtrl1 = new OSIsoft.AF.UI.AFElementFindCtrl();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gboxData.SuspendLayout();
             this.gboxWeather.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDataValues)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // piSystemPicker1
@@ -69,7 +72,7 @@
             this.piSystemPicker1.AccessibleDescription = "PI System Picker";
             this.piSystemPicker1.AccessibleName = "PI System Picker";
             this.piSystemPicker1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.piSystemPicker1.Location = new System.Drawing.Point(12, 21);
+            this.piSystemPicker1.Location = new System.Drawing.Point(37, 40);
             this.piSystemPicker1.LoginPromptSetting = OSIsoft.AF.UI.PISystemPicker.LoginPromptSettingOptions.Default;
             this.piSystemPicker1.Name = "piSystemPicker1";
             this.piSystemPicker1.ShowBegin = false;
@@ -91,7 +94,7 @@
             // 
             this.afDatabasePicker1.AccessibleDescription = "Database Picker";
             this.afDatabasePicker1.AccessibleName = "Database Picker";
-            this.afDatabasePicker1.Location = new System.Drawing.Point(12, 62);
+            this.afDatabasePicker1.Location = new System.Drawing.Point(37, 90);
             this.afDatabasePicker1.Name = "afDatabasePicker1";
             this.afDatabasePicker1.ShowBegin = false;
             this.afDatabasePicker1.ShowConfigurationDatabase = OSIsoft.AF.UI.ShowConfigurationDatabase.Hide;
@@ -109,40 +112,10 @@
             this.afDatabasePicker1.TabIndex = 1;
             this.afDatabasePicker1.SelectionChange += new OSIsoft.AF.UI.SelectionChangeEventHandler(this.afDatabasePicker1_SelectionChange);
             // 
-            // afTreeView1
-            // 
-            this.afTreeView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.afTreeView1.HideSelection = false;
-            this.afTreeView1.Location = new System.Drawing.Point(12, 102);
-            this.afTreeView1.Name = "afTreeView1";
-            this.afTreeView1.ShowAnalyses = false;
-            this.afTreeView1.ShowAnalysisTemplates = false;
-            this.afTreeView1.ShowCases = false;
-            this.afTreeView1.ShowCaseTemplates = false;
-            this.afTreeView1.ShowCategories = false;
-            this.afTreeView1.ShowConfigurationDatabase = OSIsoft.AF.UI.ShowConfigurationDatabase.Hide;
-            this.afTreeView1.ShowContacts = false;
-            this.afTreeView1.ShowDatabases = false;
-            this.afTreeView1.ShowElementTemplates = false;
-            this.afTreeView1.ShowEnumerations = false;
-            this.afTreeView1.ShowEventFrameTemplates = false;
-            this.afTreeView1.ShowModelTemplates = false;
-            this.afTreeView1.ShowNodeToolTips = true;
-            this.afTreeView1.ShowNotificationTemplates = false;
-            this.afTreeView1.ShowPlugIns = false;
-            this.afTreeView1.ShowReferenceTypes = false;
-            this.afTreeView1.ShowTableConnections = false;
-            this.afTreeView1.ShowTables = false;
-            this.afTreeView1.ShowTransferTemplates = false;
-            this.afTreeView1.Size = new System.Drawing.Size(320, 542);
-            this.afTreeView1.TabIndex = 2;
-            this.afTreeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.afTreeView1_AfterSelect);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 5);
+            this.label1.Location = new System.Drawing.Point(36, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 4;
@@ -151,7 +124,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 46);
+            this.label2.Location = new System.Drawing.Point(35, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 4;
@@ -160,15 +133,15 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 86);
+            this.label4.Location = new System.Drawing.Point(38, 114);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 13);
+            this.label4.Size = new System.Drawing.Size(98, 13);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Element Tree:";
+            this.label4.Text = "Element of Interest:";
             // 
             // btnGetData
             // 
-            this.btnGetData.Location = new System.Drawing.Point(782, 52);
+            this.btnGetData.Location = new System.Drawing.Point(320, 545);
             this.btnGetData.Name = "btnGetData";
             this.btnGetData.Size = new System.Drawing.Size(105, 28);
             this.btnGetData.TabIndex = 6;
@@ -188,9 +161,9 @@
             this.gboxData.Controls.Add(this.label7);
             this.gboxData.Controls.Add(this.label6);
             this.gboxData.Controls.Add(this.label8);
-            this.gboxData.Location = new System.Drawing.Point(358, 123);
+            this.gboxData.Location = new System.Drawing.Point(15, 376);
             this.gboxData.Name = "gboxData";
-            this.gboxData.Size = new System.Drawing.Size(529, 114);
+            this.gboxData.Size = new System.Drawing.Size(404, 142);
             this.gboxData.TabIndex = 7;
             this.gboxData.TabStop = false;
             this.gboxData.Text = "Data Settings";
@@ -199,15 +172,15 @@
             // 
             this.cboxInterval.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxInterval.FormattingEnabled = true;
-            this.cboxInterval.Location = new System.Drawing.Point(89, 84);
+            this.cboxInterval.Location = new System.Drawing.Point(74, 92);
             this.cboxInterval.Name = "cboxInterval";
-            this.cboxInterval.Size = new System.Drawing.Size(179, 21);
+            this.cboxInterval.Size = new System.Drawing.Size(140, 21);
             this.cboxInterval.TabIndex = 7;
             // 
             // rbSummary
             // 
             this.rbSummary.AutoSize = true;
-            this.rbSummary.Location = new System.Drawing.Point(351, 81);
+            this.rbSummary.Location = new System.Drawing.Point(264, 94);
             this.rbSummary.Name = "rbSummary";
             this.rbSummary.Size = new System.Drawing.Size(68, 17);
             this.rbSummary.TabIndex = 6;
@@ -218,7 +191,7 @@
             // rbInterpolatedValues
             // 
             this.rbInterpolatedValues.AutoSize = true;
-            this.rbInterpolatedValues.Location = new System.Drawing.Point(351, 58);
+            this.rbInterpolatedValues.Location = new System.Drawing.Point(264, 71);
             this.rbInterpolatedValues.Name = "rbInterpolatedValues";
             this.rbInterpolatedValues.Size = new System.Drawing.Size(116, 17);
             this.rbInterpolatedValues.TabIndex = 6;
@@ -230,7 +203,7 @@
             // 
             this.rbRecordedValues.AutoSize = true;
             this.rbRecordedValues.Checked = true;
-            this.rbRecordedValues.Location = new System.Drawing.Point(351, 35);
+            this.rbRecordedValues.Location = new System.Drawing.Point(264, 48);
             this.rbRecordedValues.Name = "rbRecordedValues";
             this.rbRecordedValues.Size = new System.Drawing.Size(107, 17);
             this.rbRecordedValues.TabIndex = 6;
@@ -241,18 +214,18 @@
             // 
             // tbEndTime
             // 
-            this.tbEndTime.Location = new System.Drawing.Point(89, 55);
+            this.tbEndTime.Location = new System.Drawing.Point(74, 63);
             this.tbEndTime.Name = "tbEndTime";
-            this.tbEndTime.Size = new System.Drawing.Size(180, 20);
+            this.tbEndTime.Size = new System.Drawing.Size(140, 20);
             this.tbEndTime.TabIndex = 5;
             this.tbEndTime.Text = "*";
             this.tbEndTime.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeBox_KeyUp);
             // 
             // tbStartTime
             // 
-            this.tbStartTime.Location = new System.Drawing.Point(89, 24);
+            this.tbStartTime.Location = new System.Drawing.Point(74, 32);
             this.tbStartTime.Name = "tbStartTime";
-            this.tbStartTime.Size = new System.Drawing.Size(180, 20);
+            this.tbStartTime.Size = new System.Drawing.Size(140, 20);
             this.tbStartTime.TabIndex = 5;
             this.tbStartTime.Text = "y";
             this.tbStartTime.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TimeBox_KeyUp);
@@ -260,7 +233,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 60);
+            this.label3.Location = new System.Drawing.Point(13, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 4;
@@ -269,7 +242,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 85);
+            this.label7.Location = new System.Drawing.Point(13, 93);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 4;
@@ -278,7 +251,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 27);
+            this.label6.Location = new System.Drawing.Point(13, 35);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 4;
@@ -287,16 +260,15 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(348, 16);
+            this.label8.Location = new System.Drawing.Point(261, 32);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 13);
+            this.label8.Size = new System.Drawing.Size(69, 13);
             this.label8.TabIndex = 4;
-            this.label8.Text = "Method";
+            this.label8.Text = "Data Method";
             // 
             // btnViewElement
             // 
-            this.btnViewElement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnViewElement.Location = new System.Drawing.Point(14, 686);
+            this.btnViewElement.Location = new System.Drawing.Point(52, 187);
             this.btnViewElement.Name = "btnViewElement";
             this.btnViewElement.Size = new System.Drawing.Size(140, 30);
             this.btnViewElement.TabIndex = 6;
@@ -314,7 +286,7 @@
             this.gboxWeather.Controls.Add(this.rbWindSpeed);
             this.gboxWeather.Controls.Add(this.rbCloudCover);
             this.gboxWeather.Controls.Add(this.rbTemperature);
-            this.gboxWeather.Location = new System.Drawing.Point(358, 5);
+            this.gboxWeather.Location = new System.Drawing.Point(15, 249);
             this.gboxWeather.Name = "gboxWeather";
             this.gboxWeather.Size = new System.Drawing.Size(406, 112);
             this.gboxWeather.TabIndex = 9;
@@ -411,7 +383,7 @@
             // lblMetaInfo
             // 
             this.lblMetaInfo.AutoSize = true;
-            this.lblMetaInfo.Location = new System.Drawing.Point(356, 253);
+            this.lblMetaInfo.Location = new System.Drawing.Point(441, 5);
             this.lblMetaInfo.Name = "lblMetaInfo";
             this.lblMetaInfo.Size = new System.Drawing.Size(65, 13);
             this.lblMetaInfo.TabIndex = 4;
@@ -425,16 +397,16 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridDataValues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridDataValues.Location = new System.Drawing.Point(360, 274);
+            this.gridDataValues.Location = new System.Drawing.Point(444, 25);
             this.gridDataValues.Name = "gridDataValues";
             this.gridDataValues.RowHeadersWidth = 80;
-            this.gridDataValues.Size = new System.Drawing.Size(526, 486);
+            this.gridDataValues.Size = new System.Drawing.Size(580, 548);
             this.gridDataValues.TabIndex = 10;
             this.gridDataValues.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.gridDataValues_RowPostPaint);
             // 
             // btnNotifications
             // 
-            this.btnNotifications.Location = new System.Drawing.Point(192, 686);
+            this.btnNotifications.Location = new System.Drawing.Point(233, 187);
             this.btnNotifications.Name = "btnNotifications";
             this.btnNotifications.Size = new System.Drawing.Size(140, 30);
             this.btnNotifications.TabIndex = 11;
@@ -442,24 +414,45 @@
             this.btnNotifications.UseVisualStyleBackColor = true;
             this.btnNotifications.Click += new System.EventHandler(this.btnNotifications_Click);
             // 
+            // afElementFindCtrl1
+            // 
+            this.afElementFindCtrl1.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.afElementFindCtrl1.Location = new System.Drawing.Point(38, 131);
+            this.afElementFindCtrl1.Margin = new System.Windows.Forms.Padding(4);
+            this.afElementFindCtrl1.MinimumSize = new System.Drawing.Size(0, 22);
+            this.afElementFindCtrl1.Name = "afElementFindCtrl1";
+            this.afElementFindCtrl1.Size = new System.Drawing.Size(320, 24);
+            this.afElementFindCtrl1.TabIndex = 12;
+            this.afElementFindCtrl1.AFElementUpdated += new OSIsoft.AF.UI.AFElementFindCtrl.AFElementUpdatedEventHandler(this.afElementFindCtrl1_AFElementUpdated);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.piSystemPicker1);
+            this.groupBox1.Controls.Add(this.afElementFindCtrl1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.afDatabasePicker1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Location = new System.Drawing.Point(15, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(404, 169);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Select City";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(906, 786);
+            this.ClientSize = new System.Drawing.Size(1044, 591);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnNotifications);
             this.Controls.Add(this.gridDataValues);
             this.Controls.Add(this.gboxWeather);
             this.Controls.Add(this.gboxData);
             this.Controls.Add(this.btnGetData);
             this.Controls.Add(this.btnViewElement);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblMetaInfo);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.afTreeView1);
-            this.Controls.Add(this.afDatabasePicker1);
-            this.Controls.Add(this.piSystemPicker1);
             this.Name = "MainForm";
             this.Text = "Weather AF Applet";
             this.gboxData.ResumeLayout(false);
@@ -467,6 +460,8 @@
             this.gboxWeather.ResumeLayout(false);
             this.gboxWeather.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDataValues)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,7 +471,6 @@
 
         private OSIsoft.AF.UI.PISystemPicker piSystemPicker1;
         private OSIsoft.AF.UI.AFDatabasePicker afDatabasePicker1;
-        private OSIsoft.AF.UI.AFTreeView afTreeView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
@@ -505,6 +499,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView gridDataValues;
         private System.Windows.Forms.Button btnNotifications;
+        private OSIsoft.AF.UI.AFElementFindCtrl afElementFindCtrl1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
