@@ -300,11 +300,17 @@ Namespace LimitCheckDR
             Return TripState.None
         End Function
 
-        Private Shared Function ToAFTime(ByVal timeContext As Object) As AFTime
+        Private Function ToAFTime(ByVal timeContext As Object) As AFTime
             If (TypeOf timeContext Is AFTime) Then
                 Return CType(timeContext, AFTime)
             ElseIf (TypeOf timeContext Is AFTimeRange) Then
-                Return CType(timeContext, AFTimeRange).EndTime
+                Dim baseElement As AFBaseElement = Attribute.Element
+                Dim timeRange As AFTimeRange = CType(timeContext, AFTimeRange)
+                If (TypeOf baseElement Is AFEventFrame) Then
+                    Return timeRange.StartTime
+                Else
+                    Return timeRange.EndTime
+                End If
             End If
             Return AFTime.NowInWholeSeconds
         End Function
