@@ -325,7 +325,7 @@ namespace LimitCheckDR
         }
 
 
-        private static AFTime ToAFTime(object timeContext)
+        private AFTime ToAFTime(object timeContext)
         {
             if (timeContext is AFTime)
             {
@@ -333,7 +333,10 @@ namespace LimitCheckDR
             }
             else if (timeContext is AFTimeRange)
             {
-                return ((AFTimeRange)timeContext).EndTime;
+                var baseElement = Attribute.Element;
+                var useStartTime = (baseElement is AFEventFrame);
+                var timeRange = (AFTimeRange)timeContext;
+                return useStartTime ? timeRange.StartTime : timeRange.EndTime;
             }
             return AFTime.NowInWholeSeconds;
         }
